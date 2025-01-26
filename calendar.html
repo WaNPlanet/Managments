@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Property Management</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .calendar-day {
+      height: 100px;
+      border: 1px solid #e0e0e0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 0.5rem;
+      text-align: center;
+    }
+
+    .calendar-day.unavailable {
+      background-color: #f8d7da;
+      color: #842029;
+    }
+
+    .calendar-day.cleaning {
+      background: repeating-linear-gradient(
+        45deg,
+        #f0f0f0,
+        #f0f0f0 10px,
+        #e0e0e0 10px,
+        #e0e0e0 20px
+      );
+    }
+
+    .reserved {
+      background-color: #e6ffed;
+      border: 2px solid #28a745;
+    }
+
+    .price {
+      font-weight: bold;
+    }
+
+    .right-panel {
+      border-left: 1px solid #e0e0e0;
+    }
+
+    .property-settings {
+      background: #ffffff;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Penstreet 917</a>
+      </div>
+    </nav>
+
+    <div class="row mt-4">
+      <!-- Calendar Section -->
+      <div class="col-md-8">
+        <div class="card p-3">
+          <div class="row text-center">
+            <div class="col calendar-day">Su</div>
+            <div class="col calendar-day">Mo</div>
+            <div class="col calendar-day">Tu</div>
+            <div class="col calendar-day">We</div>
+            <div class="col calendar-day">Th</div>
+            <div class="col calendar-day">Fr</div>
+            <div class="col calendar-day">Sa</div>
+          </div>
+          <div class="row">
+            <div class="col calendar-day cleaning">Cleaning Day</div>
+            <div class="col calendar-day">$80</div>
+            <div class="col calendar-day">$80</div>
+            <div class="col calendar-day reserved">$320</div>
+            <div class="col calendar-day unavailable">Unavailable</div>
+            <div class="col calendar-day">$80</div>
+            <div class="col calendar-day">$80</div>
+          </div>
+          <div class="row">
+            <div class="col calendar-day reserved">$400</div>
+            <div class="col calendar-day">$80</div>
+            <div class="col calendar-day">$80</div>
+            <div class="col calendar-day">$80</div>
+            <div class="col calendar-day">$80</div>
+            <div class="col calendar-day">$80</div>
+            <div class="col calendar-day">$80</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Property Settings Section -->
+      <div class="col-md-4 right-panel">
+        <div class="property-settings">
+          <h5 class="mb-3">Property Settings</h5>
+          <div class="mb-3">
+            <label for="selectedDates" class="form-label">Selected Dates</label>
+            <input type="text" class="form-control" id="selectedDates" value="W19 - 13.09.23 - 14.09.23">
+          </div>
+          <div class="mb-3">
+            <label for="reservationLength" class="form-label">Reservation Length</label>
+            <div class="d-flex">
+              <input type="number" class="form-control me-2" placeholder="Minimum days" value="1">
+              <input type="number" class="form-control" placeholder="Maximum days" value="365">
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Availability</label>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="unavailableCheck" checked>
+              <label class="form-check-label" for="unavailableCheck">Mark as Unavailable</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="cleaningDayCheck">
+              <label class="form-check-label" for="cleaningDayCheck">Mark as Cleaning Day</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
